@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode.Day5.SupplyStacks
+﻿namespace AdventOfCode.DailyChallenge
 {
     public class SupplyStack : Base
     {

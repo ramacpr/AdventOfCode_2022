@@ -1,8 +1,4 @@
-﻿using AdventOfCode.Day1.CalorieCounting;
-using AdventOfCode.Day2.RockPaperScissors;
-using AdventOfCode.Day3.RucksackReorganization;
-using AdventOfCode.Day4.CampCleanup;
-using AdventOfCode.Day5.SupplyStacks;
+﻿using AdventOfCode.DailyChallenge;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +27,11 @@ namespace AdventOfCode
             //Console.WriteLine(day2_prog_B.GetResult()); 
             #endregion
 
-            #region Rucksack re-organization
+            #region Day 3: Rucksack re-organization
             //RucksackReorganization_A day3_prog = new RucksackReorganization_A();
             //Console.WriteLine(day3_prog.GetResult()); 
+            //RucksackReorganization_B day3_prog_B = new RucksackReorganization_B();
+            //Console.WriteLine(day3_prog_B.GetResult());
             #endregion
 
             #region Day 4: Camp cleanup
@@ -43,10 +41,19 @@ namespace AdventOfCode
             //Console.WriteLine(day4_prog_B.GetResult()); 
             #endregion
 
-            SupplyStack supplyStack_A = new SupplyStack();
-            Console.WriteLine(supplyStack_A.GetResult());
-            SupplyStack supplyStack_B = new SupplyStack();
-            Console.WriteLine(supplyStack_B.GetResult_9001());
+            #region Day 5: Supply stack
+            //SupplyStack supplyStack_A = new SupplyStack();
+            //Console.WriteLine(supplyStack_A.GetResult());
+            //SupplyStack supplyStack_B = new SupplyStack();
+            //Console.WriteLine(supplyStack_B.GetResult_9001()); 
+            #endregion
+
+            #region Day 6: Tuning Trouble
+            //TuningTrouble tuningTrouble = new TuningTrouble();
+            //Console.WriteLine(tuningTrouble.GetResult());
+            //TuningTrouble tuningTrouble_B = new TuningTrouble();
+            //Console.WriteLine(tuningTrouble_B.GetResult(14)); 
+            #endregion
 
             Console.ReadKey(); 
         }

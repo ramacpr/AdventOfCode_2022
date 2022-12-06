@@ -1,11 +1,6 @@
-﻿using AdventOfCode.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AdventOfCode.DailyChallenge.Helper;
 
-namespace AdventOfCode.Day1.CalorieCounting
+namespace AdventOfCode.DailyChallenge
 {
     public class CalorieCounter_Program
     {

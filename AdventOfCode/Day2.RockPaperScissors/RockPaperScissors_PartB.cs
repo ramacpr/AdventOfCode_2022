@@ -1,11 +1,6 @@
-﻿using AdventOfCode.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AdventOfCode.DailyChallenge.Helper;
 
-namespace AdventOfCode.Day2.RockPaperScissors
+namespace AdventOfCode.DailyChallenge
 {
     enum RockPaperScissor_Col1
     {

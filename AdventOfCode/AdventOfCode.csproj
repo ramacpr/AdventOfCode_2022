@@ -50,10 +50,12 @@
     <Compile Include="Day2.RockPaperScissors\RockPaperScissors_PartB.cs" />
     <Compile Include="Day3.RucksackReorganization\RucksackItemValue.cs" />
     <Compile Include="Day3.RucksackReorganization\RucksackReorganization_A.cs" />
+    <Compile Include="Day3.RucksackReorganization\RucksackReorganization_B.cs" />
     <Compile Include="Day4.CampCleanup\CampCleanup_A.cs" />
     <Compile Include="Day4.CampCleanup\CampCleanup_B.cs" />
     <Compile Include="Day5.SupplyStacks\SupplyStackManager.cs" />
     <Compile Include="Day5.SupplyStacks\SupplyStack.cs" />
+    <Compile Include="Day6.TuningTrouble\TuningTrouble.cs" />
     <Compile Include="Helper\Days.cs" />
     <Compile Include="Helper\InputFileReader.cs" />
     <Compile Include="Helper\Sorters\Heap\MinHeapSorter.cs" />
@@ -69,6 +71,13 @@
     <Content Include="InputData\day3.txt" />
     <Content Include="InputData\day4.txt" />
     <Content Include="InputData\day5.txt" />
+    <Content Include="InputData\day6.txt" />
+    <Content Include="Problem\day1_problem.txt" />
+    <Content Include="Problem\day2_problem.txt" />
+    <Content Include="Problem\day3_problem.txt" />
+    <Content Include="Problem\day4_problem.txt" />
+    <Content Include="Problem\day5_problem.txt" />
+    <Content Include="Problem\day6_problem.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
