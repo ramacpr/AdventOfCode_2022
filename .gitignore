@@ -1,0 +1,7 @@
+.vs/*
+AdventOfCode/bin/*
+AdventOfCode/obj/*
+*.user
+*.config
+*.pdb
+*.cache
