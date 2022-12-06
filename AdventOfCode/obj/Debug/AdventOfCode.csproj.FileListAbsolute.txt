@@ -1,6 +1,0 @@
-C:\Users\pardpriy\Documents\GitHub\AdventOfCode_2022\AdventOfCode\bin\Debug\AdventOfCode.exe.config
-C:\Users\pardpriy\Documents\GitHub\AdventOfCode_2022\AdventOfCode\bin\Debug\AdventOfCode.exe
-C:\Users\pardpriy\Documents\GitHub\AdventOfCode_2022\AdventOfCode\bin\Debug\AdventOfCode.pdb
-C:\Users\pardpriy\Documents\GitHub\AdventOfCode_2022\AdventOfCode\obj\Debug\AdventOfCode.csproj.CoreCompileInputs.cache
-C:\Users\pardpriy\Documents\GitHub\AdventOfCode_2022\AdventOfCode\obj\Debug\AdventOfCode.exe
-C:\Users\pardpriy\Documents\GitHub\AdventOfCode_2022\AdventOfCode\obj\Debug\AdventOfCode.pdb
