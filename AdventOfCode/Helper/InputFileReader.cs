@@ -23,7 +23,7 @@ namespace AdventOfCode.DailyChallenge.Helper
             string line = "";
 
             while ((line = streamReader.ReadLine()) != null)            
-                yield return line;
+                yield return line.Trim();
 
             yield return string.Empty;
         }

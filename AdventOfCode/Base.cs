@@ -1,4 +1,5 @@
 ﻿using AdventOfCode.DailyChallenge.Helper;
+using System.Collections.Generic;
 
 namespace AdventOfCode
 {
@@ -9,6 +10,16 @@ namespace AdventOfCode
         public void SetStream(Days day)
         {
             inputFileReader = new InputFileReader(day);
+        }
+
+        public IEnumerable<string> GetNextLine()
+        {
+            foreach (var fileLine in inputFileReader.GetNextLine())
+            {
+                if (string.IsNullOrEmpty(fileLine))
+                    continue;
+                yield return fileLine;
+            }
         }
 
 

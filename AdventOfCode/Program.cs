@@ -55,6 +55,13 @@ namespace AdventOfCode
             //Console.WriteLine(tuningTrouble_B.GetResult(14)); 
             #endregion
 
+            #region Day 7: No space left on device
+            //NoSpaceLeftOnDevice day7 = new NoSpaceLeftOnDevice(70000000);
+            //Console.WriteLine(day7.GetResult_A(100000));
+            //Console.WriteLine(day7.GetResult_B(30000000)); 
+            #endregion
+
+
             Console.ReadKey(); 
         }
     }
