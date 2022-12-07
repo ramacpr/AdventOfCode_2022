@@ -6,112 +6,126 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.DailyChallenge
 {
-    #region File system data
-    public interface IFileSystemNode
+    #region Data classes
+    public interface INode
     {
-        int UpdateSize();
-        bool IsFolder();
-
-        string GetName(); 
+        int CalculateNodeSize();
+        string GetName();
+        int GetSize();
+        void SetSize(int size);
+        IFolderNode GetParentNode();
     }
 
-    public class FileSystemNodeBase
+    public interface IFolderNode : INode
     {
-        public FolderNode ParentNode = null;
+        IFolderNode GetChildFolderNode(string folderName);
+        INode AddChildNode(string name, IFolderNode parent, int size = -1);
+        List<INode> GetChildrenNodes();
+    }
+
+    public class FileSystemNodeBase : INode
+    {
+        public IFolderNode ParentNode = null;
         public string Name;
         public int Size = 0;
 
         public string GetName() => Name;
+
+        public void SetSize(int size) => Size = size;
+
+        public IFolderNode GetParentNode() => ParentNode;
+
+        virtual public int CalculateNodeSize() => Size;
+
+        public int GetSize() => Size;
     }
 
-    public class FileNode : FileSystemNodeBase, IFileSystemNode
+    public class FileNode : FileSystemNodeBase
     {
-        public FileNode(string fileName, int fileSize, FolderNode parent)
+        public FileNode(string fileName, int fileSize, IFolderNode parent)
         {
             ParentNode = parent;
             Name = fileName;
             Size = fileSize;
         }
-        public int UpdateSize() => Size;
-
-        public bool IsFolder() => false;
     }
 
-    public class FolderNode : FileSystemNodeBase, IFileSystemNode
+    public class FolderNode : FileSystemNodeBase, IFolderNode
     {
-        public List<IFileSystemNode> Children = new List<IFileSystemNode>();
-        public FolderNode(string fileName, FolderNode parent)
+        public List<INode> Children = new List<INode>();
+        public FolderNode(string fileName, IFolderNode parent)
         {
             ParentNode = parent;
             Name = fileName; 
         }
 
-        public bool IsFolder() => true;
-
-        // size will be -1 if child is a folder type
-        public IFileSystemNode AddChildNode(string name, FolderNode parent, int size = -1)
+        public IFolderNode GetChildFolderNode(string folderName)
         {
-            IFileSystemNode childNode = null;
-
-            if (size == -1)// folder 
-                childNode = new FolderNode(name, parent);
-            else
-                childNode = new FileNode(name, size, parent);
-
-            Children.Add(childNode);
-            return childNode; 
-        }
-
-        public FolderNode GetChildFolderNode(string folderName)
-        {
-            FolderNode folderNode = null; 
+            INode folderNode = null; 
             foreach(var childNode in Children)
             {
-                if (!childNode.IsFolder())
+                if (!(childNode is IFolderNode))
                     continue; 
                 if(childNode.GetName() == folderName)
                 {
-                    folderNode = (FolderNode)childNode;
+                    folderNode = childNode;
                     break;
                 }    
 
             }
             // if no such folder is found.. create it 
             if(folderNode == null)            
-                folderNode = AddChildNode(folderName, this) as FolderNode;            
+                folderNode = AddChildNode(folderName, this);            
 
-            return folderNode;
+            return (IFolderNode)folderNode;
         }
 
-        public int UpdateSize()
+        public override int CalculateNodeSize()
         {
             int totalSize = 0;
             foreach (var node in Children)
-                totalSize += node.UpdateSize();
-            Size = totalSize;
+                totalSize += node.CalculateNodeSize();
+            SetSize(totalSize);
             return totalSize;
+        }
+
+        public List<INode> GetChildrenNodes()
+        {
+            return Children;
+        }
+
+        // size will be -1 if child is a folder type
+        public INode AddChildNode(string name, IFolderNode parent, int size = -1)
+        {
+            INode childNode = null;
+
+            if (size == -1)
+                childNode = new FolderNode(name, parent);
+            else
+                childNode = new FileNode(name, size, parent);
+
+            Children.Add(childNode);
+            return childNode;
         }
     } 
     #endregion
    
-    
     public class NoSpaceLeftOnDevice : Base
     {
         int TotalSpace = 0;
-
-        IFileSystemNode fileSystemRoot = null;
-        IFileSystemNode currNode = null;
+        IFolderNode fileSystemRoot = null;
+        IFolderNode currNode = null;
         public NoSpaceLeftOnDevice(int totalSystemSpace)
         {
             TotalSpace = totalSystemSpace;
             SetStream(Helper.Days.day7);
             foreach (var inputLine in GetNextLine())
             {
-                ProcessLine(inputLine);
+                ParseLine(inputLine);
             }
         }
 
-        private void ProcessLine(string line)
+        private void ParseLine(string line)
         {           
             if (string.IsNullOrEmpty(line))
                 return;
@@ -156,17 +170,15 @@ namespace AdventOfCode.DailyChallenge
                         foreach(var nodeName in navigateNodes)
                         {
                             if (nodeName == "..")
-                                currNode = ((FolderNode)currNode).ParentNode; 
+                                currNode = currNode.GetParentNode(); 
                             else
-                            {
-                                currNode = ((FolderNode)currNode).GetChildFolderNode(nodeName); 
-                            }
+                                currNode = currNode.GetChildFolderNode(nodeName); 
                         }
                     }                
                 }
                 else if(cmdToProcess.StartsWith("ls"))
                 {
-                    // in case of 'ls' command, get ready to update the child nodes of the folderNode
+                    // in case of 'ls' command, get ready to update the child nodes of the folderNode... nothing for now!
                 }
                 return; 
             }
@@ -177,7 +189,7 @@ namespace AdventOfCode.DailyChallenge
                 cmdToProcess = cmdToProcess.Replace("dir", " ");
                 cmdToProcess = cmdToProcess.Trim();
 
-                ((FolderNode)currNode).AddChildNode(cmdToProcess, currNode as FolderNode); 
+                currNode.AddChildNode(cmdToProcess, currNode as FolderNode); 
             }
             else if(Char.IsDigit(cmdToProcess[0])) // child file
             {
@@ -186,7 +198,7 @@ namespace AdventOfCode.DailyChallenge
                 cmdToProcess = cmdToProcess.Trim();
                 var fileData = cmdToProcess.Split(' ');
 
-                ((FolderNode)currNode).AddChildNode(fileData[1], currNode as FolderNode, int.Parse(fileData[0]));
+                currNode.AddChildNode(fileData[1], currNode as FolderNode, int.Parse(fileData[0]));
             }
 
         }
@@ -196,12 +208,12 @@ namespace AdventOfCode.DailyChallenge
             if (folderNode == null)
                 folderNode = fileSystemRoot as FolderNode;
 
-            folderNode.Size = folderNode.UpdateSize(); 
+            folderNode.SetSize(folderNode.CalculateNodeSize());
         }
 
-        public int GetResult_A(int sizeLimit, FolderNode folderNode = null)
+        public int GetResult_A(int sizeLimit, IFolderNode folderNode = null)
         {
-            if(((FolderNode)fileSystemRoot).Size == 0)
+            if(fileSystemRoot.GetSize() == 0)
             {
                 // one time activity only
                 UpdateFolderNodeSizes();
@@ -210,12 +222,12 @@ namespace AdventOfCode.DailyChallenge
             int totalSize = 0;
             // if folderNode is null, start from root
             if (folderNode == null)
-                folderNode = fileSystemRoot as FolderNode; 
+                folderNode = fileSystemRoot; 
 
-            if(folderNode.IsFolder() && folderNode.Size <= sizeLimit) 
-                totalSize += folderNode.Size;
+            if(folderNode is IFolderNode && folderNode.GetSize() <= sizeLimit) 
+                totalSize += folderNode.GetSize();
 
-            var folders = ((FolderNode)folderNode).Children.Where(x => x.IsFolder()).ToList();
+            var folders = folderNode.GetChildrenNodes().Where(x => x is IFolderNode).ToList();
             foreach (var childNode in folders)
             {
                 totalSize += GetResult_A(sizeLimit, childNode as FolderNode);
@@ -224,9 +236,9 @@ namespace AdventOfCode.DailyChallenge
             return totalSize; 
         }
 
-        public int GetResult_B(int updateSize, FolderNode folderNode = null, int? minSize = null, int sizeLimit = -1)
+        public int GetResult_B(int updateSize, IFolderNode folderNode = null, int? minSize = null, int sizeLimit = -1)
         {
-            if (((FolderNode)fileSystemRoot).Size == 0)
+            if (fileSystemRoot.GetSize() == 0)
             {
                 // one time activity only
                 UpdateFolderNodeSizes();
@@ -234,22 +246,22 @@ namespace AdventOfCode.DailyChallenge
 
             // if folderNode is null, start from root
             if (folderNode == null)
-                folderNode = fileSystemRoot as FolderNode;
+                folderNode = fileSystemRoot;
 
             if(sizeLimit == -1)
             {
                 // calculate the size limit based on the available data!
-                sizeLimit = updateSize - (TotalSpace - ((FolderNode)fileSystemRoot).Size);
+                sizeLimit = updateSize - (TotalSpace - fileSystemRoot.GetSize());
             }
 
-            if (folderNode.IsFolder() && folderNode.Size >= sizeLimit &&
-                (minSize == null || folderNode.Size < minSize))
-                minSize = folderNode.Size;
+            if (folderNode is IFolderNode && folderNode.GetSize() >= sizeLimit &&
+                (minSize == null || folderNode.GetSize() < minSize))
+                minSize = folderNode.GetSize();
 
-            var folders = ((FolderNode)folderNode).Children.Where(x => x.IsFolder()).ToList();
-            foreach (var childNode in folders)
+            foreach (var childNode in folderNode.GetChildrenNodes())
             {
-                minSize = GetResult_B(updateSize, childNode as FolderNode, minSize, sizeLimit);
+                if(childNode is IFolderNode)
+                    minSize = GetResult_B(updateSize, (IFolderNode)childNode, minSize, sizeLimit);
             }
 
             return (int)minSize;
