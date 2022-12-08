@@ -61,6 +61,9 @@ namespace AdventOfCode
             //Console.WriteLine(day7.GetResult_B(30000000)); 
             #endregion
 
+            TreeTop_TreeHouse day8 = new TreeTop_TreeHouse();
+            Console.WriteLine(day8.GetResult_A());
+            Console.WriteLine(day8.GetResult_B());
 
             Console.ReadKey(); 
         }

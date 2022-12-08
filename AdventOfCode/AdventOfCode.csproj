@@ -57,7 +57,7 @@
     <Compile Include="Day5.SupplyStacks\SupplyStack.cs" />
     <Compile Include="Day6.TuningTrouble\TuningTrouble.cs" />
     <Compile Include="Day7.NoSpaceLeftOnDevice\NoSpaceLeftOnDevice.cs" />
-    <Compile Include="Day8\day8.cs" />
+    <Compile Include="Day8.TreeTop_TreeHouse\TreeTop_TreeHouse.cs" />
     <Compile Include="Helper\Days.cs" />
     <Compile Include="Helper\InputFileReader.cs" />
     <Compile Include="Helper\Sorters\Heap\MinHeapSorter.cs" />
