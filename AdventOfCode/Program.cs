@@ -57,13 +57,20 @@ namespace AdventOfCode
 
             #region Day 7: No space left on device
             //NoSpaceLeftOnDevice day7 = new NoSpaceLeftOnDevice(70000000);
-            //Console.WriteLine(day7.GetResult_A(100000));
+            //Console.WriteLine(day7.GetResult(100000));
             //Console.WriteLine(day7.GetResult_B(30000000)); 
             #endregion
 
-            TreeTop_TreeHouse day8 = new TreeTop_TreeHouse();
-            Console.WriteLine(day8.GetResult_A());
-            Console.WriteLine(day8.GetResult_B());
+            #region day 8
+            //TreeTop_TreeHouse day8 = new TreeTop_TreeHouse();
+            //Console.WriteLine(day8.GetResult());
+            //Console.WriteLine(day8.GetResult_B()); 
+            #endregion
+
+            RopeBridge day9 = new RopeBridge();
+            Console.WriteLine(day9.GetResult());
+            RopeBridge_B day9_b = new RopeBridge_B();
+            Console.WriteLine(day9_b.GetResult());
 
             Console.ReadKey(); 
         }
