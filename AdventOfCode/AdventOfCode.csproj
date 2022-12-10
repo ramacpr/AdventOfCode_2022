@@ -85,6 +85,9 @@
     <Content Include="Problem\day4_problem.txt" />
     <Content Include="Problem\day5_problem.txt" />
     <Content Include="Problem\day6_problem.txt" />
+    <Content Include="Problem\day7_problem.txt" />
+    <Content Include="Problem\day8_problem.txt" />
+    <Content Include="Problem\day9_problem.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

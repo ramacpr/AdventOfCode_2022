@@ -1,8 +1,4 @@
-﻿Advent of Code[About][Events][Shop][Settings][Log Out]Priyanka Pardesi Ramachander 6*
-       y(2022)[Calendar][AoC++][Sponsors][Leaderboard][Stats]
-Our sponsors help make Advent of Code possible:
-13|37 - Happy Holidays from all of us at 13|37 to all of you participating in Advent of Code '22!
---- Day 1: Calorie Counting ---
+﻿--- Day 1: Calorie Counting ---
 Santa's reindeer typically eat regular reindeer food, but they need a lot of magical energy to deliver presents on Christmas. For that, their favorite snack is a special type of star fruit that only grows deep in the jungle. The Elves have brought you on their annual expedition to the grove where the fruit grows.
 
 To supply enough magical energy, the expedition needs to retrieve a minimum of fifty stars by December 25th. Although the Elves assure you that the grove has plenty of fruit, you decide to grab any fruit you see along the way, just in case.
