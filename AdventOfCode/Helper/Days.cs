@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode.DailyChallenge.Helper
+namespace AdventOfCode.Solutions.Helper
 {
     public enum Days
     {
@@ -16,6 +16,12 @@ namespace AdventOfCode.DailyChallenge.Helper
         day6,
         day7,
         day8,
-        day9
+        day9,
+        day10,
+        day11,
+        day12,
+        day13, 
+        day14,
+        day15
     }
 }

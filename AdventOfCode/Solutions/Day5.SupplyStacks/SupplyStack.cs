@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.DailyChallenge
+﻿namespace AdventOfCode.Solutions
 {
     public class SupplyStack : Base
     {

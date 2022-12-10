@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AdventOfCode.DailyChallenge
+namespace AdventOfCode.Solutions
 {
 
     public class TuningTrouble : Base
@@ -16,9 +16,7 @@ namespace AdventOfCode.DailyChallenge
             HashSet<char> uniqueSet = new HashSet<char>();
             Dictionary<char, int> charIndexMap = new Dictionary<char, int>(); 
 
-
             var line = inputFileReader.GetFirstLine().Trim();
-
 
             int startIndex = 0, curIndex = 0;
             int charCount = 0; 

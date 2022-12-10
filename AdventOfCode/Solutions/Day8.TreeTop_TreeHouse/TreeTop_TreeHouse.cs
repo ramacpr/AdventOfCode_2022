@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventOfCode.DailyChallenge
+namespace AdventOfCode.Solutions
 {
 
     public class TreeData

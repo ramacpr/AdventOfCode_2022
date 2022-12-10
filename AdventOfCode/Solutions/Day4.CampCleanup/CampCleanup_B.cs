@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.DailyChallenge
+﻿namespace AdventOfCode.Solutions
 {
     public class CampCleanup_B : Base
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode.DailyChallenge
+namespace AdventOfCode.Solutions
 {
     public enum Direction
     {

@@ -1,4 +1,4 @@
-﻿using AdventOfCode.DailyChallenge;
+﻿using AdventOfCode.Solutions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,15 +62,21 @@ namespace AdventOfCode
             #endregion
 
             #region day 8
-            //TreeTop_TreeHouse day8 = new TreeTop_TreeHouse();
-            //Console.WriteLine(day8.GetResult());
-            //Console.WriteLine(day8.GetResult_B()); 
+            TreeTop_TreeHouse day8 = new TreeTop_TreeHouse();
+            Console.WriteLine(day8.GetResult_A());
+            Console.WriteLine(day8.GetResult_B()); 
             #endregion
 
-            RopeBridge day9 = new RopeBridge();
-            Console.WriteLine(day9.GetResult());
-            RopeBridge_B day9_b = new RopeBridge_B();
-            Console.WriteLine(day9_b.GetResult());
+            #region Day 9
+            //RopeBridge day9 = new RopeBridge();
+            //Console.WriteLine(day9.GetResult());
+            //RopeBridge_B day9_b = new RopeBridge_B();
+            //Console.WriteLine(day9_b.GetResult()); 
+            #endregion
+
+            //CathodeRayTube day10 = new CathodeRayTube();
+            //Console.WriteLine(day10.GetResult_A());
+            //day10.GetResult_B();
 
             Console.ReadKey(); 
         }

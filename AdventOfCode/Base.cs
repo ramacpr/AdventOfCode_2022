@@ -1,4 +1,4 @@
-﻿using AdventOfCode.DailyChallenge.Helper;
+﻿using AdventOfCode.Solutions.Helper;
 using System.Collections.Generic;
 
 namespace AdventOfCode

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AdventOfCode.DailyChallenge
+namespace AdventOfCode.Solutions
 {
     public class SupplyStackManager
     {

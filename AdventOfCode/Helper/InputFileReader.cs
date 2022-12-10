@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace AdventOfCode.DailyChallenge.Helper
+namespace AdventOfCode.Solutions.Helper
 {
     public class InputFileReader
     {
@@ -24,6 +24,9 @@ namespace AdventOfCode.DailyChallenge.Helper
 
             while ((line = streamReader.ReadLine()) != null)            
                 yield return line.Trim();
+
+            streamReader.DiscardBufferedData();
+            streamReader.BaseStream.Seek(0, SeekOrigin.Begin);
 
             yield return string.Empty;
         }
