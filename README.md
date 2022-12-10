@@ -1,6 +1,7 @@
 # Advent of Code 2022
 
-Note: 'n' -> number of lines in the input file
+[Teradyne Leaderboard](https://adventofcode.com/2022/leaderboard/private/view/380786)
+
 | DAY                                                          | STARS | C#                            | Time Complexity (A) | Time Complexity (B) | Solution Description |
 | ------------------------------------------------------------ | ----- | ----------------------------- | --------------- | ---------------- | -------------------- |
 | [Day 1: Calorie Counting](https://adventofcode.com/2022/day/1) | ⭐️⭐️    | [Solution](./AdventOfCode/Solutions/Day1.CalorieCounting) | O(n) | O(n) |
