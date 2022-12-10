@@ -62,9 +62,9 @@ namespace AdventOfCode
             #endregion
 
             #region day 8
-            TreeTop_TreeHouse day8 = new TreeTop_TreeHouse();
-            Console.WriteLine(day8.GetResult_A());
-            Console.WriteLine(day8.GetResult_B()); 
+            //TreeTop_TreeHouse day8 = new TreeTop_TreeHouse();
+            //Console.WriteLine(day8.GetResult_A());
+            //Console.WriteLine(day8.GetResult_B()); 
             #endregion
 
             #region Day 9
@@ -74,9 +74,11 @@ namespace AdventOfCode
             //Console.WriteLine(day9_b.GetResult()); 
             #endregion
 
+            #region Day 10
             //CathodeRayTube day10 = new CathodeRayTube();
             //Console.WriteLine(day10.GetResult_A());
-            //day10.GetResult_B();
+            //day10.GetResult_B(); 
+            #endregion
 
             Console.ReadKey(); 
         }
