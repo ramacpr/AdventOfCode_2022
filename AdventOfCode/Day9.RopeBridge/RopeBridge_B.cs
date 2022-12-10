@@ -73,27 +73,7 @@ namespace AdventOfCode.DailyChallenge
                 MoveHNode(GetDirection(moveData[0].ToLower()), int.Parse(moveData[1]));
             }
         }
-        public int GetResult()
-        {
-            int cnt = 0;
-
-            //foreach(var kv in moveMap)
-            //{
-            //    Console.WriteLine(kv.Key.RowIndex.ToString() + ":" + kv.Key.ColIndex.ToString());
-            //    Console.WriteLine("\tH count: " + kv.Value.HVisitCount);
-            //    for (int loc = 0; loc < 9; loc++)//in kv.Value.TailVisitCount)
-            //        Console.WriteLine("\t " + loc.ToString() + ": " + kv.Value.TailVisitCount[loc]);
-            //}    
-
-            cnt = moveMap.Values.Where(x => x.HVisitCount > 0).ToList().Count();
-            Console.WriteLine(" -> " + cnt.ToString());
-            for (int i = 0; i < 9; i++)
-            {
-                cnt = moveMap.Values.Where(x => x.TailVisitCount[i] >= 1).ToList().Count();
-                Console.WriteLine(i.ToString() + " -> " + cnt.ToString());
-            }
-            return cnt;
-        }
+        public int GetResult() => moveMap.Values.Where(x => x.TailVisitCount[(int)FollowerID.follower_9] >= 1).ToList().Count();
 
         private void GetNewHLocation(NodeLocation hNode, Direction direction, out int newRowLoc, out int newColLoc)
         {
