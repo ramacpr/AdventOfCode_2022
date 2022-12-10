@@ -1,7 +1,7 @@
 # Advent of Code 2022
 
-| DAY                                                          | STARS | C#                            | Solution Description |
-| ------------------------------------------------------------ | ----- | ----------------------------- | -------------------- |
+| DAY                                                          | STARS | C#                            | Time Complexity | Space Complexity | Solution Description |
+| ------------------------------------------------------------ | ----- | ----------------------------- | --------------- | ---------------- | -------------------- |
 | [Day 1: Calorie Counting](https://adventofcode.com/2022/day/1) | ⭐️⭐️    | [Solution](./AdventOfCode/Day1.CalorieCounting) |                      |
 | [Day 2: Rock Paper Scissors](https://adventofcode.com/2022/day/2) | ⭐️⭐️    | [Solution](./AdventOfCode/Day2.RockPaperScissors) |                      |
 | [Day 3: Rucksack Reorganization](https://adventofcode.com/2022/day/3) | ⭐️⭐️ | [Solution](./AdventOfCode/Day3.RucksackReorganization) |                      |
