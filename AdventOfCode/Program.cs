@@ -80,6 +80,12 @@ namespace AdventOfCode
             //day10.GetResult_B(); 
             #endregion
 
+            #region Day 11
+            MonkeyInTheMiddle day11 = new MonkeyInTheMiddle();
+            Console.WriteLine("Part 1: \n" + day11.GetResult_A());
+            Console.WriteLine("\nPart 2: \n" + day11.GetResult_B());
+            #endregion
+
             Console.ReadKey(); 
         }
     }

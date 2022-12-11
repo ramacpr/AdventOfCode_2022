@@ -47,6 +47,7 @@
     <Compile Include="Solutions\Day1.CalorieCounting\CalorieCounter_Program.cs" />
     <Compile Include="Solutions\Day1.CalorieCounting\CalorieCounter_Program_PARTB.cs" />
     <Compile Include="Solutions\Day10.CathodeRayTube\CathodeRayTube.cs" />
+    <Compile Include="Solutions\Day11.MonkeyInTheMiddle\MonkeyInTheMiddle.cs" />
     <Compile Include="Solutions\Day2.RockPaperScissors\RockPaperScissors.cs" />
     <Compile Include="Solutions\Day2.RockPaperScissors\RockPaperScissors_PartB.cs" />
     <Compile Include="Solutions\Day3.RucksackReorganization\RucksackItemValue.cs" />
@@ -73,6 +74,7 @@
   <ItemGroup>
     <Content Include="InputData\day1.txt" />
     <Content Include="InputData\day10.txt" />
+    <Content Include="InputData\day11.txt" />
     <Content Include="InputData\day2.txt" />
     <Content Include="InputData\day3.txt" />
     <Content Include="InputData\day4.txt" />
@@ -81,6 +83,7 @@
     <Content Include="InputData\day7.txt" />
     <Content Include="InputData\day8.txt" />
     <Content Include="InputData\day9.txt" />
+    <Content Include="Puzzles\11Dec22.txt" />
     <Content Include="Puzzles\1Dec22.txt" />
     <Content Include="Puzzles\10Dec22.txt" />
     <Content Include="Puzzles\2Dec22.txt" />
