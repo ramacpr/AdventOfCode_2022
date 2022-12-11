@@ -14,7 +14,7 @@
 | [Day 8: Treetop Tree House](https://adventofcode.com/2022/day/8) | ⭐️⭐️ | [Solution](./AdventOfCode/Solutions/Day8.TreeTop_TreeHouse) | O(n.M) | O(n.(M^2)) | M -> number of columns. Used 'Stack' in partA to acheive linear time complexity. Need to optimize partB!
 | [Day 9: Rope Bridge](https://adventofcode.com/2022/day/9) | ⭐️⭐️ | [Solution](./AdventOfCode/Solutions/Day9.RopeBridge) | O(n) | O(n) |
 | [Day 10: Cathode-Ray Tube](https://adventofcode.com/2022/day/10)  | ⭐️⭐️ | [Solution](./AdventOfCode/Solutions/Day10.CathodeRayTube) |   O(n)   | O(n.S) | S -> sprite width (if S is very small we can neglect it)
-| [Day 11](https://adventofcode.com/2022/day/11)              |       |                               |                      |
+| [Day 11](https://adventofcode.com/2022/day/11)| ⭐️⭐️ | [Solution](./AdventOfCode/Solutions/Day11.MonkeyInTheMiddle) | O(n) | O(n) | 'Queue' to maintain the "items" for each monkey. 
 | [Day 12](https://adventofcode.com/2022/day/12)              |       |                               |                      |
 | [Day 13](https://adventofcode.com/2022/day/13)              |       |                               |                      |
 | [Day 14](https://adventofcode.com/2022/day/14)              |       |                               |                      |
